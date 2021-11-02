@@ -61,6 +61,7 @@ public class Jaquizzy extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource()==b1){
             String name = t1.getText();
+            this.setVisible(false);
             new Rules(name);
 
         }else{
