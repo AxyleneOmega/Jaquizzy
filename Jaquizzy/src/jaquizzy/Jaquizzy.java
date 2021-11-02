@@ -13,6 +13,8 @@ import java.awt.event.*;
  * @author Palak Gupta : plk
  */
 public class Jaquizzy extends JFrame implements ActionListener{
+    JButton b1,b2;
+    JTextField t1;
     Jaquizzy(){
         setBounds(100, 50, 1280, 750);
         getContentPane().setBackground(Color.BLACK);
@@ -34,19 +36,19 @@ public class Jaquizzy extends JFrame implements ActionListener{
         l3.setBounds(700, 130, 300, 20); 
         add(l3);
 
-        JTextField t1= new JTextField();
+         t1= new JTextField();
         t1.setBounds(630,200,310,25);
         t1.setFont(new Font("Verdana", Font.PLAIN, 18));
         add(t1);
 
-        JButton b1 = new JButton("Rules");
+         b1 = new JButton("Rules");
         b1.setBounds(630,270,120,25);
         b1.setBackground(Color.BLUE);
         b1.setForeground(Color.WHITE);
         b1.addActionListener(this);
         add(b1);
 
-        JButton b2 = new JButton("Exit");
+         b2 = new JButton("Exit");
         b2.setBounds(820,270,120,25);
         b2.setBackground(Color.RED);
         b2.setForeground(Color.WHITE);
@@ -57,7 +59,13 @@ public class Jaquizzy extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent ae){
-        
+        if(ae.getSource()==b1){
+            String name = t1.getText();
+            new Rules(name);
+
+        }else{
+            System.exit(0);
+        }
 
     }
 
