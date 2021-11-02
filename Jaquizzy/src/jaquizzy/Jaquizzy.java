@@ -9,6 +9,7 @@ import java.awt.*;
  *
  * @author Advaith Karnad : AxyleneOmega
  * @author Fiza Sameer : bbq-sauce
+ * @author Palak Gupta : plk
  */
 public class Jaquizzy extends JFrame{
     Jaquizzy(){
