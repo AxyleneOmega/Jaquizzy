@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 /**
  *
@@ -11,7 +12,7 @@ import java.awt.*;
  * @author Fiza Sameer : bbq-sauce
  * @author Palak Gupta : plk
  */
-public class Jaquizzy extends JFrame{
+public class Jaquizzy extends JFrame implements ActionListener{
     Jaquizzy(){
         setBounds(100, 50, 1280, 750);
         getContentPane().setBackground(Color.BLACK);
@@ -22,12 +23,44 @@ public class Jaquizzy extends JFrame{
         l1.setBounds(0, 0, 400, 300);
         add(l1);
         JLabel l2 = new JLabel("Jaquizzy");
-        l2.setForeground(Color.WHITE);;
-        l2.setBounds(700, 40, 300, 20); 
+        l2.setForeground(Color.WHITE);
+        l2.setFont(new Font("Montez", Font.BOLD, 46));
+        l2.setBounds(700, 40, 350, 80); 
         add(l2);
+        
+        JLabel l3 = new JLabel("Enter your name.");
+        l3.setForeground(Color.WHITE);
+        l3.setFont(new Font("Verdana", Font.PLAIN, 18));
+        l3.setBounds(700, 130, 300, 20); 
+        add(l3);
+
+        JTextField t1= new JTextField();
+        t1.setBounds(630,200,310,25);
+        t1.setFont(new Font("Verdana", Font.PLAIN, 18));
+        add(t1);
+
+        JButton b1 = new JButton("Rules");
+        b1.setBounds(630,270,120,25);
+        b1.setBackground(Color.BLUE);
+        b1.setForeground(Color.WHITE);
+        b1.addActionListener(this);
+        add(b1);
+
+        JButton b2 = new JButton("Exit");
+        b2.setBounds(820,270,120,25);
+        b2.setBackground(Color.RED);
+        b2.setForeground(Color.WHITE);
+        b2.addActionListener(this);
+        add(b2);
 
         setVisible(true);
     }
+
+    public void actionPerformed(ActionEvent ae){
+        
+
+    }
+
     public static void main(String[] args) {
         new Jaquizzy();
     }
