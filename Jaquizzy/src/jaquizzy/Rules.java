@@ -8,10 +8,13 @@ public class Rules extends JFrame {
     
     Rules(String username){
         setBounds(600, 200,800, 650);
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(Color.BLACK);
 
-        JLabel l1= new JLabel("WELCOME TO JAQUIZZY"+ username);
-        l1.setBounds(50,20,700,30);
+        JLabel l3= new JLabel("WELCOME TO JAQUIZZY "+username);
+        l3.setBounds(700, 40, 350, 80);
+        l3.setForeground(Color.WHITE);
+        l3.setFont(new Font("Montez", Font.BOLD, 46));
+        add(l3);
         
         
         
