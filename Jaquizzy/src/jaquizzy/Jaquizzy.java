@@ -41,14 +41,14 @@ public class Jaquizzy extends JFrame implements ActionListener{
         t1.setFont(new Font("Verdana", Font.PLAIN, 18));
         add(t1);
 
-         b1 = new JButton("Rules");
+        b1 = new JButton("Rules");
         b1.setBounds(630,270,120,25);
         b1.setBackground(Color.BLUE);
         b1.setForeground(Color.WHITE);
         b1.addActionListener(this);
         add(b1);
 
-         b2 = new JButton("Exit");
+        b2 = new JButton("Exit");
         b2.setBounds(820,270,120,25);
         b2.setBackground(Color.RED);
         b2.setForeground(Color.WHITE);

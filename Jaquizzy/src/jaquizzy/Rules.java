@@ -12,15 +12,16 @@ public class Rules extends JFrame implements ActionListener {
     Rules(String username){
         setBounds(600, 200,800, 650);
         getContentPane().setBackground(Color.BLACK);
+        setLayout(null);
 
         JLabel l1= new JLabel("WELCOME TO JAQUIZZY "+username);
-        l1.setBounds(50, 20, 700, 30);
+        l1.setBounds(250, 20, 700, 30);
         l1.setForeground(Color.WHITE);
         l1.setFont(new Font("Roboto", Font.BOLD, 28));
         add(l1);
 
         JLabel l2= new JLabel("");
-        l2.setBounds(20, 90, 600, 350);
+        l2.setBounds(250, 90, 600, 350);
         l2.setForeground(Color.WHITE);
         l2.setFont(new Font("Verdana", Font.PLAIN, 18));
         l2.setText(
@@ -38,7 +39,7 @@ public class Rules extends JFrame implements ActionListener {
         b1.addActionListener(this);
         add(b1);
 
-         b2 = new JButton("Start");
+        b2 = new JButton("Start");
         b2.setBounds(250,270,120,25);
         b2.setBackground(new Color(30,144,255));
         b2.setForeground(Color.BLACK);
