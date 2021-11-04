@@ -63,7 +63,6 @@ public class Jaquizzy extends JFrame implements ActionListener{
             String name = t1.getText();
             this.setVisible(false);
             new Rules(name);
-
         }else{
             System.exit(0);
         }

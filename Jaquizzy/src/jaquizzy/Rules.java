@@ -10,7 +10,7 @@ public class Rules extends JFrame implements ActionListener {
     JButton b1,b2;
     
     Rules(String username){
-        setBounds(600, 200,800, 650);
+        setBounds(100, 50, 1280, 750);
         getContentPane().setBackground(Color.BLACK);
         setLayout(null);
 
@@ -57,7 +57,8 @@ public class Rules extends JFrame implements ActionListener {
             this.setVisible(false);
             new Jaquizzy().setVisible(true);
         }else if(ae.getSource()==b2){
-
+            this.setVisible(false);
+               
         }
 
     }
