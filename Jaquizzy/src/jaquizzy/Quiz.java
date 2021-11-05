@@ -1,6 +1,6 @@
 package jaquizzy;
 import javax.swing.*;
-
+import java.io.File;
 import java.awt.*;
 import java.util.*;
 import java.awt.event.*;
@@ -39,16 +39,18 @@ class Questions{
 public class Quiz extends JFrame implements ActionListener{
     LinkedList<Questions> quizQuestions = new LinkedList<Questions>();
     LinkedList<String> answers = new LinkedList<String>();
-    JButton next, submit;
+    String username;
     public static int count = 0;
     public static int timer = 30;
     public static int score = 0;
     public static boolean quizOn = true;
     public static boolean answered = false;
+    JButton next, submit;
     JLabel qno, question;
     JRadioButton opt1, opt2, opt3, opt4;
     ButtonGroup options;
-    Quiz(){
+    Quiz(String username, String qType, File f){
+        this.username = username;
         this.setTitle("Jaquizzy! Quiztime");
         this.setList();
         setBounds(100, 50, 1280, 750);
@@ -56,6 +58,8 @@ public class Quiz extends JFrame implements ActionListener{
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/Placeholder.png"));
+        Image i2 = i1.getImage().getScaledInstance(1280,200, Image.SCALE_DEFAULT);
+        i1 = new ImageIcon(i2);
         JLabel l1 = new JLabel(i1);
         l1.setBounds(0,0,1280,200);
         add(l1);
@@ -133,12 +137,26 @@ public class Quiz extends JFrame implements ActionListener{
             System.out.println(answers);
         }
         else if(ae.getSource() == submit){
-
+            if(options.getSelection() == null){
+                answers.add("");
+            }else{
+                answers.add(options.getSelection().getActionCommand());
+            };
+            for(int i=0; i<answers.size(); i++){
+                if(answers.get(i).equals(this.quizQuestions.get(i).options[this.quizQuestions.get(i).correct])){
+                    score +=10;
+                };
+            }
+            System.out.println(answers);
+            this.setVisible(false);
+            quizOn = false;
+            count = 0;
+            new Score(username,score).setVisible(true);
         }
     }
     public void paint(Graphics g){
         super.paint(g);
-        String time = "Time left : "+ timer;
+        String time = "Time left : "+ timer+" seconds...";
         g.setColor(new Color(0, 100, 100));
         g.setFont(new Font("Century Gothic", Font.BOLD, 25));
         
@@ -156,7 +174,9 @@ public class Quiz extends JFrame implements ActionListener{
             if(quizOn){
                 repaint();
             }
-        }catch(Exception e){}
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         if(answered){
             timer = 30;
             answered = false;
@@ -174,15 +194,16 @@ public class Quiz extends JFrame implements ActionListener{
             };
             quizOn = true;
             if(count == this.quizQuestions.size()){
-                System.out.println(answers);
                 for(int i=0; i<answers.size(); i++){
                     if(answers.get(i).equals(this.quizQuestions.get(i).options[this.quizQuestions.get(i).correct])){
                         score +=10;
                     };
                 }
+                System.out.println(answers);
                 this.setVisible(false);
                 quizOn = false;
-                //new Score().setVisible(true);
+                count = 0;
+                //new Score(username).setVisible(true);
             }
             else{
                 count++;
@@ -217,6 +238,6 @@ public class Quiz extends JFrame implements ActionListener{
         options.clearSelection();
     }
     public static void main(String args[]) {
-        new Quiz().setVisible(true);
+        new Quiz("","",new File("")).setVisible(true);
     }
 }

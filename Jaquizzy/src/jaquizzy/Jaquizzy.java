@@ -22,6 +22,8 @@ public class Jaquizzy extends JFrame implements ActionListener{
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/Placeholder.png"));
+        Image i2 = i1.getImage().getScaledInstance(400, 300, Image.SCALE_DEFAULT);
+        i1 = new ImageIcon(i2);
         JLabel l1 = new JLabel(i1);
         l1.setBounds(0, 0, 400, 300);
         add(l1);
