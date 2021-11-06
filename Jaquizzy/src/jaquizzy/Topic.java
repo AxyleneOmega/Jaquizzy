@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Topic extends JFrame implements ActionListener {
-    public  String type;
+    public String type;
     public String qtopic;
     ButtonGroup topic;
     JRadioButton b1, b2, b3, b4, b5, b6;
@@ -14,7 +14,6 @@ public class Topic extends JFrame implements ActionListener {
     String username;
 
     Topic(String username, String type) {
-        System.out.println(type);
         this.type = type;
         this.username = username;
         setBounds(100, 50, 1280, 750);
@@ -42,7 +41,7 @@ public class Topic extends JFrame implements ActionListener {
         b5.setActionCommand("");
         b6 = new JRadioButton("");
         b6.setActionCommand("");
-        
+
         if (type.equals("Education Quiz")) {
             b1.setText("Science");
             b1.setActionCommand("Science");
@@ -56,8 +55,7 @@ public class Topic extends JFrame implements ActionListener {
             b5.setActionCommand("Logic");
             b6.setText("English");
             b6.setActionCommand("English");
-        } 
-        else  if(type.equals("Entertainment Quiz")){
+        } else if (type.equals("Entertainment Quiz")) {
             b1.setText("Sports");
             b1.setActionCommand("Sports");
             b2.setText("Movies");
@@ -141,31 +139,31 @@ public class Topic extends JFrame implements ActionListener {
 
     }
 
-    public void actionPerformed(ActionEvent ae){
-        if (ae.getSource() == back){
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == back) {
             this.setVisible(false);
             new Rules(username).setVisible(true);
-        }
-        else if (ae.getSource()== start){
+        } else if (ae.getSource() == start) {
             repaint();
             this.setVisible(false);
-            new Quiz(username, qtopic, new File("")).setVisible(true);   
+            System.out.println(qtopic);
+            new Quiz(username,qtopic, new File(qtopic+".txt")).setVisible(true);
         }
 
     }
 
-    public void paint(Graphics g){
+    public void paint(Graphics g) {
         super.paint(g);
-        if(topic.getSelection()!= null){
+        if (topic.getSelection() != null) {
             start.setEnabled(true);
             qtopic = topic.getSelection().getActionCommand();
-        }
-        else{
+        } else {
             repaint();
         }
 
     }
-    public static void main(String args[]){
-        new Topic("","");
+
+    public static void main(String args[]) {
+        new Topic("", "");
     }
 }
