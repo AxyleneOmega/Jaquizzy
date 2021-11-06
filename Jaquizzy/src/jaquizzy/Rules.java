@@ -80,7 +80,7 @@ public class Rules extends JFrame implements ActionListener {
         b1.addActionListener(this);
         add(b1);
 
-        b2 = new JButton("Start");
+        b2 = new JButton("Next");
         b2.setFont(new Font("Century Gothic", Font.PLAIN, 22));
         b2.setBounds(250,600,120,25);
         b2.setBackground(new Color(30,144,255));
@@ -97,7 +97,7 @@ public class Rules extends JFrame implements ActionListener {
             new Jaquizzy().setVisible(true);
         }else if(ae.getSource()==b2){
             this.setVisible(false);
-            new Quiz(username, qType, new File("")).setVisible(true);   
+            new Topic(username,type.getSelection().getActionCommand()).setVisible(true);
         }
 
     }
