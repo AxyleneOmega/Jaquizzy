@@ -6,13 +6,17 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Topic extends JFrame implements ActionListener {
-    public static String type;
+    public  String type;
+    public String qtopic;
     ButtonGroup topic;
     JRadioButton b1, b2, b3, b4, b5, b6;
     JButton back, start;
+    String username;
 
     Topic(String username, String type) {
+        System.out.println(type);
         this.type = type;
+        this.username = username;
         setBounds(100, 50, 1280, 750);
         getContentPane().setBackground(Color.BLACK);
         setLayout(null);
@@ -26,31 +30,45 @@ public class Topic extends JFrame implements ActionListener {
         l1.setForeground(Color.WHITE);
         l1.setFont(new Font("Century Gothic", Font.BOLD, 28));
         add(l1);
+        b1 = new JRadioButton("");
+        b1.setActionCommand("");
+        b2 = new JRadioButton("");
+        b2.setActionCommand("");
+        b3 = new JRadioButton("");
+        b3.setActionCommand("");
+        b4 = new JRadioButton("");
+        b4.setActionCommand("");
+        b5 = new JRadioButton("");
+        b5.setActionCommand("");
+        b6 = new JRadioButton("");
+        b6.setActionCommand("");
+        
         if (type.equals("Education Quiz")) {
-            b1 = new JRadioButton("Science");
+            b1.setText("Science");
             b1.setActionCommand("Science");
-            b2 = new JRadioButton("GK");
+            b2.setText("GK");
             b2.setActionCommand("GK");
-            b3 = new JRadioButton("Tech");
+            b3.setText("Tech");
             b3.setActionCommand("Tech");
-            b4 = new JRadioButton("Maths");
+            b4.setText("Maths");
             b4.setActionCommand("Maths");
-            b5 = new JRadioButton("Logic");
+            b5.setText("Logic");
             b5.setActionCommand("Logic");
-            b6 = new JRadioButton("English");
+            b6.setText("English");
             b6.setActionCommand("English");
-        } else if (type.equals("Entertainment Quiz")) {
-            b1 = new JRadioButton("Sports");
+        } 
+        else  if(type.equals("Entertainment Quiz")){
+            b1.setText("Sports");
             b1.setActionCommand("Sports");
-            b2 = new JRadioButton("Movies");
+            b2.setText("Movies");
             b2.setActionCommand("Movies");
-            b3 = new JRadioButton("Brands");
+            b3.setText("Brands");
             b3.setActionCommand("Brands");
-            b4 = new JRadioButton("Music");
-            b4.setActionCommand("Muisc");
-            b5 = new JRadioButton("Gaming");
+            b4.setText("Music");
+            b4.setActionCommand("Music");
+            b5.setText("Gaming");
             b5.setActionCommand("Gaming");
-            b6 = new JRadioButton("Food");
+            b6.setText("Food");
             b6.setActionCommand("Food");
 
         }
@@ -129,9 +147,25 @@ public class Topic extends JFrame implements ActionListener {
             new Rules(username).setVisible(true);
         }
         else if (ae.getSource()== start){
-
-            new Quiz(username, qType, new File("")).setVisible(true);   
+            repaint();
+            this.setVisible(false);
+            new Quiz(username, qtopic, new File("")).setVisible(true);   
         }
 
+    }
+
+    public void paint(Graphics g){
+        super.paint(g);
+        if(topic.getSelection()!= null){
+            start.setEnabled(true);
+            qtopic = topic.getSelection().getActionCommand();
+        }
+        else{
+            repaint();
+        }
+
+    }
+    public static void main(String args[]){
+        new Topic("","");
     }
 }

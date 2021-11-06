@@ -1,5 +1,5 @@
 package jaquizzy;
-import java.io.File;
+//import java.io.File;
 import javax.swing.*;
 
 import java.awt.*;
@@ -10,7 +10,7 @@ public class Rules extends JFrame implements ActionListener {
     JButton b1,b2;
     ButtonGroup type;
     JRadioButton edu, ent;
-    String qType;
+    public static String qType;
     
     Rules(String username){
         this.username = username;
@@ -66,7 +66,7 @@ public class Rules extends JFrame implements ActionListener {
         ent.setBounds(600, 520, 300, 30);
         ent.setFont(new Font("Century Gothic", Font.PLAIN, 22));
         ent.setBackground(new Color(220, 70, 200));
-        edu.setActionCommand("Entertainment Quiz");
+        ent.setActionCommand("Entertainment Quiz");
         add(ent);
         type = new ButtonGroup();
         type.add(edu);
@@ -93,11 +93,21 @@ public class Rules extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource()==b1){
+            repaint();
             this.setVisible(false);
             new Jaquizzy().setVisible(true);
-        }else if(ae.getSource()==b2){
-            this.setVisible(false);
-            new Topic(username,type.getSelection().getActionCommand()).setVisible(true);
+        }
+        else if(ae.getSource()==b2){
+            System.out.println(type.getSelection().getActionCommand());
+            if(type.getSelection()!=null){
+                this.setVisible(false);
+                new Topic(username,qType).setVisible(true);
+            }
+            else{
+                repaint();
+            }
+        
+            
         }
 
     }
@@ -105,11 +115,13 @@ public class Rules extends JFrame implements ActionListener {
     public void paint(Graphics g){
         super.paint(g);
         if(type.getSelection() != null){
-            b2.setEnabled(true);
             qType = type.getSelection().getActionCommand();
+            b2.setEnabled(true);
         }
-        else{
+        try {
             repaint();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

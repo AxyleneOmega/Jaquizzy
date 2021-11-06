@@ -49,7 +49,7 @@ public class Quiz extends JFrame implements ActionListener{
     JLabel qno, question;
     JRadioButton opt1, opt2, opt3, opt4;
     ButtonGroup options;
-    Quiz(String username, String qType, File f){
+    Quiz(String username, String qtopic, File f){
         this.username = username;
         this.setTitle("Jaquizzy! Quiztime");
         this.setList();
