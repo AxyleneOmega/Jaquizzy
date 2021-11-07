@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.awt.*;
 import java.util.*;
 import java.awt.event.*;
+import java.net.URL;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
@@ -20,7 +21,8 @@ class Questions {
     String options[] = new String[4];
     int correct = 0;
 
-    Questions(String question, String resource, int m, String opt1, String opt2, String opt3, String opt4, int correct) {
+    Questions(String question, String resource, int m, String opt1, String opt2, String opt3, String opt4,
+            int correct) {
         this.question = question;
         this.resource = resource;
         this.multiplier = m;
@@ -39,6 +41,7 @@ class Questions {
 }
 
 public class Quiz extends JFrame implements ActionListener {
+
     LinkedList<Questions> quizQuestions = new LinkedList<Questions>();
     LinkedList<String> answers = new LinkedList<String>();
     String username;
@@ -48,55 +51,65 @@ public class Quiz extends JFrame implements ActionListener {
     public static boolean quizOn = true;
     public static boolean answered = false;
     JButton next, submit;
-    JLabel qno, question;
+    JLabel qno, question, qIm;
     JRadioButton opt1, opt2, opt3, opt4;
     ButtonGroup options;
-    JLabel qIm;
     BufferedImage img = null;
 
     Quiz(String username, String qtopic) {
+        URL iconURL = getClass().getClassLoader().getResource("jaquizzy/Assets/JLogo.png");
+        ImageIcon icon = new ImageIcon(iconURL);
+        this.setIconImage(icon.getImage());
         this.username = username;
-        this.setTitle("Jaquizzy! Quiztime");
+        this.setTitle("Jaquizzy! Quiz is on...");
         this.setList(qtopic);
         setBounds(100, 50, 1280, 750);
-        getContentPane().setBackground(new Color(20, 160, 200));
+        getContentPane().setBackground(new Color(82, 113, 255));
         setLayout(null);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/Placeholder.png"));
-        Image i2 = i1.getImage().getScaledInstance(1280, 200, Image.SCALE_DEFAULT);
-        i1 = new ImageIcon(i2);
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/JaquizzyLogo.jpg"));
         JLabel l1 = new JLabel(i1);
         l1.setBounds(0, 0, 1280, 200);
         add(l1);
 
+        qIm = new JLabel();
+        qIm.setBounds(900, 320, 300, 300);
+        add(qIm);
+
         qno = new JLabel("");
+        qno.setForeground(Color.BLACK);
         qno.setFont(new Font("Serif", Font.PLAIN, 24));
         qno.setBounds(100, 250, 50, 30);
         add(qno);
         question = new JLabel("");
+        question.setForeground(Color.BLACK);
         question.setFont(new Font("Serif", Font.PLAIN, 24));
         question.setBounds(150, 250, 700, 30);
         add(question);
 
         opt1 = new JRadioButton("");
+        opt1.setForeground(Color.BLACK);
         opt1.setBounds(170, 320, 700, 30);
         opt1.setFont(new Font("Serif", Font.PLAIN, 20));
-        opt1.setBackground(new Color(20, 160, 200));
+        opt1.setBackground(new Color(210, 210, 255));
         add(opt1);
         opt2 = new JRadioButton("");
+        opt2.setForeground(Color.BLACK);
         opt2.setBounds(170, 360, 700, 30);
         opt2.setFont(new Font("Serif", Font.PLAIN, 20));
-        opt2.setBackground(new Color(20, 160, 200));
+        opt2.setBackground(new Color(210, 210, 255));
         add(opt2);
         opt3 = new JRadioButton("");
+        opt3.setForeground(Color.BLACK);
         opt3.setBounds(170, 400, 700, 30);
         opt3.setFont(new Font("Serif", Font.PLAIN, 20));
-        opt3.setBackground(new Color(20, 160, 200));
+        opt3.setBackground(new Color(210, 210, 255));
         add(opt3);
         opt4 = new JRadioButton("");
+        opt4.setForeground(Color.BLACK);
         opt4.setBounds(170, 440, 700, 30);
         opt4.setFont(new Font("Serif", Font.PLAIN, 20));
-        opt4.setBackground(new Color(20, 160, 200));
+        opt4.setBackground(new Color(210, 210, 255));
         add(opt4);
 
         options = new ButtonGroup();
@@ -107,7 +120,8 @@ public class Quiz extends JFrame implements ActionListener {
 
         next = new JButton("Next");
         next.setFont(new Font("Century Gothic", Font.PLAIN, 22));
-        next.setBackground(new Color(200, 200, 200));
+        next.setBackground(new Color(254, 205, 0));
+        next.setForeground(Color.BLACK);
         next.addActionListener(this);
         next.setBounds(550, 650, 200, 40);
         add(next);
@@ -115,7 +129,8 @@ public class Quiz extends JFrame implements ActionListener {
         submit = new JButton("Submit");
         submit.setFont(new Font("Century Gothic", Font.PLAIN, 22));
         submit.setEnabled(false);
-        submit.setBackground(new Color(200, 200, 200));
+        submit.setBackground(new Color(254, 205, 0));
+        submit.setForeground(Color.BLACK);
         submit.addActionListener(this);
         submit.setBounds(1000, 650, 200, 40);
         add(submit);
@@ -149,7 +164,7 @@ public class Quiz extends JFrame implements ActionListener {
             ;
             for (int i = 0; i < answers.size(); i++) {
                 if (answers.get(i).equals(this.quizQuestions.get(i).options[this.quizQuestions.get(i).correct])) {
-                    score += 10*(1+this.quizQuestions.get(i).multiplier);
+                    score += 10 * (1 + this.quizQuestions.get(i).multiplier);
                 }
             }
             System.out.println(answers);
@@ -163,7 +178,7 @@ public class Quiz extends JFrame implements ActionListener {
     public void paint(Graphics g) {
         super.paint(g);
         String time = "Time left : " + timer + " seconds...";
-        g.setColor(new Color(0, 100, 100));
+        g.setColor(new Color(210, 210, 255));
         g.setFont(new Font("Century Gothic", Font.BOLD, 25));
 
         if (timer > 0) {
@@ -221,21 +236,21 @@ public class Quiz extends JFrame implements ActionListener {
         }
     }
 
-    public int setList (String topic) {
+    public int setList(String topic) {
         String basePath = new File("").getAbsolutePath();
         System.out.println(basePath);
-        String filePath = new File("Jaquizzy/src/jaquizzy/Files/"+topic+".txt").getAbsolutePath();
+        String filePath = new File("Jaquizzy/src/jaquizzy/Files/" + topic + ".txt").getAbsolutePath();
         System.out.println(filePath);
         File f = new File(filePath);
         boolean fExists = true;
-        if(!f.exists()){
+        if (!f.exists()) {
             fExists = false;
         }
         System.out.println(fExists);
-        if(!f.canRead()){
-           f.setReadable(true);    
+        if (!f.canRead()) {
+            f.setReadable(true);
         }
-        try{
+        try {
             Scanner sc = new Scanner(new BufferedReader(new FileReader(filePath)));
             int line = 0;
             String q = "";
@@ -248,69 +263,67 @@ public class Quiz extends JFrame implements ActionListener {
             int cI = 0;
             String dot = "";
 
-            while(sc.hasNextLine()){
+            while (sc.hasNextLine()) {
                 line %= 9;
-                switch(line){
-                    case 0:{
-                        //Question
-                        try{
-                        q=sc.nextLine().toString();
-                        }
-                        catch(Exception e){
-                            e.printStackTrace();
-                            return -1;
-                        }
-                        break;
+                switch (line) {
+                case 0: {
+                    // Question
+                    try {
+                        q = sc.nextLine().toString();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        return -1;
                     }
-                    case 1:{
-                        //Image
-                        r = sc.nextLine().toString();
-                        break;
-                    }
-                    case 2:{
-                        //Difficulty
-                        d = Integer.parseInt(sc.nextLine().toString());
-                        break;
-                    }
-                    case 3:{
-                        //Option1
-                        o1 = sc.nextLine().toString();
-                        break;
-                    }
-                    case 4:{
-                        //Option2
-                        o2 = sc.nextLine().toString();
-                        break;
-                    }
-                    case 5:{
-                        //Option3
-                        o3 = sc.nextLine().toString();
-                        break;
-                    }
-                    case 6:{
-                        //Option4
-                        o4 = sc.nextLine().toString();
-                        break;
-                    }
-                    case 7:{
-                        //Correct Option Index
-                        cI = Integer.parseInt(sc.nextLine().toString());
-                        break;
-                    }
-                    case 8:{
-                        dot = sc.nextLine().toString();
-                        if(dot == "."){
-                            System.out.println(". found.");
-                        }
-                        this.quizQuestions.add(new Questions(q, r, d, o1, o2, o3, o4, cI));
-                        break;
-                    }
+                    break;
                 }
-                line ++;
+                case 1: {
+                    // Image
+                    r = sc.nextLine().toString();
+                    break;
+                }
+                case 2: {
+                    // Difficulty
+                    d = Integer.parseInt(sc.nextLine().toString());
+                    break;
+                }
+                case 3: {
+                    // Option1
+                    o1 = sc.nextLine().toString();
+                    break;
+                }
+                case 4: {
+                    // Option2
+                    o2 = sc.nextLine().toString();
+                    break;
+                }
+                case 5: {
+                    // Option3
+                    o3 = sc.nextLine().toString();
+                    break;
+                }
+                case 6: {
+                    // Option4
+                    o4 = sc.nextLine().toString();
+                    break;
+                }
+                case 7: {
+                    // Correct Option Index
+                    cI = Integer.parseInt(sc.nextLine().toString());
+                    break;
+                }
+                case 8: {
+                    dot = sc.nextLine().toString();
+                    if (dot == ".") {
+                        System.out.println(". found.");
+                    }
+                    this.quizQuestions.add(new Questions(q, r, d, o1, o2, o3, o4, cI));
+                    break;
+                }
+                }
+                line++;
             }
             sc.close();
-        }
-        catch(IOException ei){
+        } catch (IOException ei) {
             ei.printStackTrace();
             return -1;
         }
@@ -329,21 +342,31 @@ public class Quiz extends JFrame implements ActionListener {
         opt4.setText(this.quizQuestions.get(count).options[3]);
         opt4.setActionCommand(this.quizQuestions.get(count).options[3]);
         options.clearSelection();
-        
-        String imgPath = new File("Jaquizzy/src/jaquizzy/Images/"+this.quizQuestions.get(count).resource+".jpg").getAbsolutePath();
-        System.out.println(imgPath);
-        try{
-            if(this.quizQuestions.get(count).resource != "-"){
+        System.out.println(">>" + this.quizQuestions.get(count).resource + "<<");
+        try {
+            String imgPath = new File("Jaquizzy/src/jaquizzy/Images/" + this.quizQuestions.get(count).resource + ".jpg")
+                    .getAbsolutePath();
+            System.out.println(imgPath);
+            File f = new File(imgPath);
+            if (f.exists()) {
                 img = ImageIO.read(new File(imgPath));
-                qIm = new JLabel(new ImageIcon(img));
-                qIm.setBounds(900, 320, 300, 300);
-                add(qIm);
+                qIm.setIcon(new ImageIcon(img.getScaledInstance(300, 300, Image.SCALE_DEFAULT)));
+            } else {
+                String logoPath = new File("Jaquizzy/src/jaquizzy/Assets/JLogo.png").getAbsolutePath();
+                img = ImageIO.read(new File(logoPath));
+                qIm.setIcon(new ImageIcon(img.getScaledInstance(300, 300, Image.SCALE_DEFAULT)));
             }
-        }
-        catch(IOException e){
+            repaint();
+        } catch (IOException e) {
             e.printStackTrace();
         }
-            
+
+    }
+
+    static class MyWindowListener extends WindowAdapter {
+        public void windowClosing(WindowEvent e) {
+           System.exit(0);
+        }
     }
 
     public static void main(String args[]) {

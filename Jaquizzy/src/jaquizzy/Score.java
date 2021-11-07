@@ -3,19 +3,21 @@ package jaquizzy;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.net.URL;
 
 public class Score extends JFrame implements ActionListener {
     Score(String username, int score) {
-        this.setTitle("Jaquizzy! Scores");
+        URL iconURL = getClass().getClassLoader().getResource("jaquizzy/Assets/JLogo.png");
+        ImageIcon icon = new ImageIcon(iconURL);
+        this.setIconImage(icon.getImage());
+        this.setTitle("Jaquizzy! Score");
         setBounds(100, 50, 1280, 750);
-        getContentPane().setBackground(new Color(20, 160, 200));
+        getContentPane().setBackground(new Color(82, 113, 255));
         setLayout(null);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/Placeholder.png"));
-        Image i2 = i1.getImage().getScaledInstance(300, 300, Image.SCALE_DEFAULT);
-        i1 = new ImageIcon(i2);
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/JaquizzyLogo.jpg"));
         JLabel l1 = new JLabel(i1);
-        l1.setBounds(10, 10, 300, 300);
+        l1.setBounds(50, 10, 400, 300);
         add(l1);
 
         JLabel l2 = new JLabel("Jaquizzy!");
@@ -42,8 +44,8 @@ public class Score extends JFrame implements ActionListener {
         add(l5);
 
         JButton b1 = new JButton("Play Again");
-        b1.setFont(new Font("Century Gothic", Font.BOLD, 22));
-        b1.setBackground(new Color(200, 200, 200));
+        b1.setFont(new Font("Century Gothic", Font.PLAIN, 22));
+        b1.setBackground(new Color(254, 205, 0));
         b1.addActionListener(this);
         b1.setBounds(700, 650, 200, 40);
         add(b1);
@@ -52,6 +54,12 @@ public class Score extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         this.setVisible(false);
         new Jaquizzy().setVisible(true);
+    }
+
+    static class MyWindowListener extends WindowAdapter {
+        public void windowClosing(WindowEvent e) {
+           System.exit(0);
+        }
     }
 
     public static void main(String args[]) {

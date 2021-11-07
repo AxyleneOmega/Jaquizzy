@@ -3,6 +3,7 @@ package jaquizzy;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.net.URL;
 
 public class Topic extends JFrame implements ActionListener {
     public String type;
@@ -13,19 +14,29 @@ public class Topic extends JFrame implements ActionListener {
     String username;
 
     Topic(String username, String type) {
+        URL iconURL = getClass().getClassLoader().getResource("jaquizzy/Assets/JLogo.png");
+        ImageIcon icon = new ImageIcon(iconURL);
+        this.setIconImage(icon.getImage());
         this.type = type;
         this.username = username;
+        this.setTitle("Jaquizzy! Topic");
         setBounds(100, 50, 1280, 750);
-        getContentPane().setBackground(Color.BLACK);
+        getContentPane().setBackground(new Color(82, 113, 255));
         setLayout(null);
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/JLogo.png"));
+        Image i = i1.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT);
+        i1.setImage(i);
+        JLabel lx = new JLabel(i1);
+        lx.setBounds(50, 50, 200, 200);
+        add(lx);
         JLabel l0 = new JLabel("Welcome " + username + "!");
-        l0.setBounds(250, 20, 700, 30);
-        l0.setForeground(Color.WHITE);
+        l0.setBounds(300, 100, 700, 30);
+        l0.setForeground(Color.BLACK);
         l0.setFont(new Font("Century Gothic", Font.BOLD, 28));
         add(l0);
         JLabel l1 = new JLabel("Select Topic: ");
-        l1.setBounds(250, 60, 700, 30);
-        l1.setForeground(Color.WHITE);
+        l1.setBounds(300, 150, 700, 30);
+        l1.setForeground(Color.BLACK);
         l1.setFont(new Font("Century Gothic", Font.BOLD, 28));
         add(l1);
         b1 = new JRadioButton("");
@@ -71,43 +82,43 @@ public class Topic extends JFrame implements ActionListener {
         }
         // b1
         b1.setFont(new Font("Century Gothic", Font.PLAIN, 22));
-        b1.setBounds(250, 150, 120, 30);
-        b1.setBackground(Color.RED);
+        b1.setBounds(300, 250, 120, 30);
+        b1.setBackground(new Color(210, 210, 255));
         b1.setForeground(Color.BLACK);
         b1.addActionListener(this);
         add(b1);
         // b2
         b2.setFont(new Font("Century Gothic", Font.PLAIN, 22));
-        b2.setBounds(250, 200, 120, 30);
-        b2.setBackground(Color.RED);
+        b2.setBounds(300, 300, 120, 30);
+        b2.setBackground(new Color(210, 210, 255));
         b2.setForeground(Color.BLACK);
         b2.addActionListener(this);
         add(b2);
         // b3
         b3.setFont(new Font("Century Gothic", Font.PLAIN, 22));
-        b3.setBounds(250, 250, 120, 30);
-        b3.setBackground(Color.RED);
+        b3.setBounds(300, 350, 120, 30);
+        b3.setBackground(new Color(210, 210, 255));
         b3.setForeground(Color.BLACK);
         b3.addActionListener(this);
         add(b3);
         // b4
         b4.setFont(new Font("Century Gothic", Font.PLAIN, 22));
-        b4.setBounds(400, 150, 120, 30);
-        b4.setBackground(Color.RED);
+        b4.setBounds(500, 250, 120, 30);
+        b4.setBackground(new Color(210, 210, 255));
         b4.setForeground(Color.BLACK);
         b4.addActionListener(this);
         add(b4);
         // b5
         b5.setFont(new Font("Century Gothic", Font.PLAIN, 22));
-        b5.setBounds(400, 200, 120, 30);
-        b5.setBackground(Color.RED);
+        b5.setBounds(500, 300, 120, 30);
+        b5.setBackground(new Color(210, 210, 255));
         b5.setForeground(Color.BLACK);
         b5.addActionListener(this);
         add(b5);
         // b6
         b6.setFont(new Font("Century Gothic", Font.PLAIN, 22));
-        b6.setBounds(400, 250, 120, 30);
-        b6.setBackground(Color.RED);
+        b6.setBounds(500, 350, 120, 30);
+        b6.setBackground(new Color(210, 210, 255));
         b6.setForeground(Color.BLACK);
         b6.addActionListener(this);
         add(b6);
@@ -120,16 +131,16 @@ public class Topic extends JFrame implements ActionListener {
         topic.add(b6);
         back = new JButton("Back");
         back.setFont(new Font("Century Gothic", Font.PLAIN, 22));
-        back.setBounds(425, 600, 120, 25);
-        back.setBackground(Color.RED);
+        back.setBounds(300, 600, 120, 25);
+        back.setBackground(new Color(254, 100, 100));
         back.setForeground(Color.BLACK);
         back.addActionListener(this);
         add(back);
 
         start = new JButton("Start");
         start.setFont(new Font("Century Gothic", Font.PLAIN, 22));
-        start.setBounds(250, 600, 120, 25);
-        start.setBackground(new Color(30, 144, 255));
+        start.setBounds(500, 600, 120, 25);
+        start.setBackground(new Color(100, 205, 10));
         start.setForeground(Color.BLACK);
         start.addActionListener(this);
         add(start);
@@ -140,13 +151,14 @@ public class Topic extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == back) {
+            repaint();
             this.setVisible(false);
             new Rules(username).setVisible(true);
         } else if (ae.getSource() == start) {
             repaint();
             this.setVisible(false);
             System.out.println(qtopic);
-            new Quiz(username, qtopic).setVisible(true);
+            new Quiz(username, topic.getSelection().getActionCommand()).setVisible(true);
         }
 
     }
@@ -162,6 +174,11 @@ public class Topic extends JFrame implements ActionListener {
 
     }
 
+    static class MyWindowListener extends WindowAdapter {
+        public void windowClosing(WindowEvent e) {
+           System.exit(0);
+        }
+    }
     public static void main(String args[]) {
         new Topic("", "");
     }
