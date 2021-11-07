@@ -48,10 +48,9 @@ public class Quiz extends JFrame implements ActionListener {
     public static boolean quizOn = true;
     public static boolean answered = false;
     JButton next, submit;
-    JLabel qno, question;
+    JLabel qno, question, qIm;
     JRadioButton opt1, opt2, opt3, opt4;
     ButtonGroup options;
-    JLabel qIm;
     BufferedImage img = null;
 
     Quiz(String username, String qtopic) {
@@ -59,7 +58,7 @@ public class Quiz extends JFrame implements ActionListener {
         this.setTitle("Jaquizzy! Quiztime");
         this.setList(qtopic);
         setBounds(100, 50, 1280, 750);
-        getContentPane().setBackground(new Color(79, 119, 255));
+        getContentPane().setBackground(new Color(82, 113, 255));
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/Placeholder.png"));
@@ -68,6 +67,10 @@ public class Quiz extends JFrame implements ActionListener {
         JLabel l1 = new JLabel(i1);
         l1.setBounds(0, 0, 1280, 200);
         add(l1);
+
+        qIm = new JLabel();
+        qIm.setBounds(900, 320, 300, 300);
+        add(qIm);
 
         qno = new JLabel("");
         qno.setForeground(Color.BLACK);
@@ -339,23 +342,18 @@ public class Quiz extends JFrame implements ActionListener {
         options.clearSelection();
         System.out.println(">>"+this.quizQuestions.get(count).resource+"<<");
         try{
-            if(this.quizQuestions.get(count).resource == "-"){
-                String imgPath = new File("Jaquizzy/src/jaquizzy/Assets/Placeholder.png").getAbsolutePath();
-                System.out.println(imgPath);
+            String imgPath = new File("Jaquizzy/src/jaquizzy/Images/"+this.quizQuestions.get(count).resource+".jpg").getAbsolutePath();
+            System.out.println(imgPath);
+            File f = new File(imgPath);
+            if(f.exists()){
                 img = ImageIO.read(new File(imgPath));
-                qIm = new JLabel();
-                qIm.setBounds(900, 320, 300, 300);
-                add(qIm);
+                qIm.setIcon(new ImageIcon(img.getScaledInstance(300, 300, Image.SCALE_DEFAULT)));
             }
-            if(this.quizQuestions.get(count).resource != "-"){
-                String imgPath = new File("Jaquizzy/src/jaquizzy/Images/"+this.quizQuestions.get(count).resource+".jpg").getAbsolutePath();
-                System.out.println(imgPath);
-                img = ImageIO.read(new File(imgPath));
-                qIm = new JLabel(new ImageIcon(img));
-                qIm.setBounds(900, 320, 300, 300);
-                add(qIm);
+            else{
+                String logoPath = new File("Jaquizzy/src/jaquizzy/Assets/JaquizzyLogo.jpg").getAbsolutePath();
+                img = ImageIO.read(new File(logoPath));
+                qIm.setIcon(new ImageIcon(img.getScaledInstance(300, 300, Image.SCALE_DEFAULT)));
             }
-            
             repaint();
         }
         catch(IOException e){

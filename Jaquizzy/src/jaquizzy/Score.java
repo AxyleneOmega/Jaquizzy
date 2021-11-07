@@ -8,7 +8,7 @@ public class Score extends JFrame implements ActionListener {
     Score(String username, int score) {
         this.setTitle("Jaquizzy! Scores");
         setBounds(100, 50, 1280, 750);
-        getContentPane().setBackground(new Color(79, 119, 255));
+        getContentPane().setBackground(new Color(82, 113, 255));
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/Placeholder.png"));

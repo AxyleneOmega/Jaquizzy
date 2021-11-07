@@ -19,12 +19,10 @@ public class Jaquizzy extends JFrame implements ActionListener {
     Jaquizzy() {
         this.setTitle("Jaquizzy!");
         setBounds(100, 50, 1280, 750);
-        getContentPane().setBackground(new Color(79, 119, 255));
+        getContentPane().setBackground(new Color(82, 113, 255));
         setLayout(null);
         
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/Placeholder.png"));
-        Image i2 = i1.getImage().getScaledInstance(400, 300, Image.SCALE_DEFAULT);
-        i1 = new ImageIcon(i2);
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/JaquizzyLogo.jpg"));
         JLabel l1 = new JLabel(i1);
         l1.setBounds(0, 0, 400, 300);
         add(l1);
