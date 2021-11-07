@@ -75,6 +75,11 @@ public class Jaquizzy extends JFrame implements ActionListener {
         }
 
     }
+    static class MyWindowListener extends WindowAdapter {
+        public void windowClosing(WindowEvent e) {
+           System.exit(0);
+        }
+     }
 
     public static void main(String[] args) {
         new Jaquizzy();
