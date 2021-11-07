@@ -9,7 +9,7 @@ public class Topic extends JFrame implements ActionListener {
     public String type;
     public String qtopic;
     ButtonGroup topic;
-    JRadioButton b1, b2, b3, b4, b5, b6;
+    JRadioButton b0, b1, b2, b3, b4, b5, b6;
     JButton back, start;
     String username;
 
@@ -39,6 +39,8 @@ public class Topic extends JFrame implements ActionListener {
         l1.setForeground(Color.BLACK);
         l1.setFont(new Font("Century Gothic", Font.BOLD, 28));
         add(l1);
+        b0 = new JRadioButton("");
+        b0.setActionCommand("");
         b1 = new JRadioButton("");
         b1.setActionCommand("");
         b2 = new JRadioButton("");
@@ -53,6 +55,8 @@ public class Topic extends JFrame implements ActionListener {
         b6.setActionCommand("");
 
         if (type.equals("Education Quiz")) {
+            b0.setText("Java");
+            b0.setActionCommand("JavaQ");
             b1.setText("Science");
             b1.setActionCommand("Science");
             b2.setText("GK");
@@ -80,6 +84,13 @@ public class Topic extends JFrame implements ActionListener {
             b6.setActionCommand("Food");
 
         }
+        // b0
+        b0.setFont(new Font("Century Gothic", Font.PLAIN, 22));
+        b0.setBounds(300, 400, 120, 30);
+        b0.setBackground(new Color(210, 210, 255));
+        b0.setForeground(Color.BLACK);
+        b0.addActionListener(this);
+        add(b0);
         // b1
         b1.setFont(new Font("Century Gothic", Font.PLAIN, 22));
         b1.setBounds(300, 250, 120, 30);
@@ -123,6 +134,7 @@ public class Topic extends JFrame implements ActionListener {
         b6.addActionListener(this);
         add(b6);
         topic = new ButtonGroup();
+        topic.add(b0);
         topic.add(b1);
         topic.add(b2);
         topic.add(b3);

@@ -18,6 +18,7 @@ abstract class A{}
 .
 What is subclass in java?
 -
+0
 A subclass is a class that extends another class
 A subclass in a class declared outside the class
 Both above
