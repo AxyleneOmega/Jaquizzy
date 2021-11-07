@@ -19,7 +19,7 @@ public class Jaquizzy extends JFrame implements ActionListener {
     Jaquizzy() {
         this.setTitle("Jaquizzy!");
         setBounds(100, 50, 1280, 750);
-        getContentPane().setBackground(Color.BLACK);
+        getContentPane().setBackground(new Color(79, 119, 255));
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/Placeholder.png"));
@@ -29,13 +29,13 @@ public class Jaquizzy extends JFrame implements ActionListener {
         l1.setBounds(0, 0, 400, 300);
         add(l1);
         JLabel l2 = new JLabel("Jaquizzy!");
-        l2.setForeground(Color.WHITE);
+        l2.setForeground(Color.BLACK);
         l2.setFont(new Font("Century Gothic", Font.BOLD, 46));
         l2.setBounds(690, 40, 350, 80);
         add(l2);
 
         JLabel l3 = new JLabel("Enter your name:");
-        l3.setForeground(Color.WHITE);
+        l3.setForeground(Color.BLACK);
         l3.setFont(new Font("Serif", Font.PLAIN, 22));
         l3.setBounds(710, 130, 300, 40);
         add(l3);
@@ -48,16 +48,16 @@ public class Jaquizzy extends JFrame implements ActionListener {
         b1 = new JButton("Rules");
         b1.setFont(new Font("Century Gothic", Font.PLAIN, 22));
         b1.setBounds(630, 270, 120, 30);
-        b1.setBackground(Color.BLUE);
-        b1.setForeground(Color.WHITE);
+        b1.setBackground(new Color(254, 205, 0));
+        b1.setForeground(Color.BLACK);
         b1.addActionListener(this);
         add(b1);
 
         b2 = new JButton("Exit");
         b2.setFont(new Font("Century Gothic", Font.PLAIN, 22));
         b2.setBounds(820, 270, 120, 30);
-        b2.setBackground(Color.RED);
-        b2.setForeground(Color.WHITE);
+        b2.setBackground(new Color(254, 100, 100));
+        b2.setForeground(Color.BLACK);
         b2.addActionListener(this);
         add(b2);
 

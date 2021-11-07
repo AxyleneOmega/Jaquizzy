@@ -59,7 +59,7 @@ public class Quiz extends JFrame implements ActionListener {
         this.setTitle("Jaquizzy! Quiztime");
         this.setList(qtopic);
         setBounds(100, 50, 1280, 750);
-        getContentPane().setBackground(new Color(20, 160, 200));
+        getContentPane().setBackground(new Color(79, 119, 255));
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/Placeholder.png"));
@@ -70,33 +70,39 @@ public class Quiz extends JFrame implements ActionListener {
         add(l1);
 
         qno = new JLabel("");
+        qno.setForeground(Color.BLACK);
         qno.setFont(new Font("Serif", Font.PLAIN, 24));
         qno.setBounds(100, 250, 50, 30);
         add(qno);
         question = new JLabel("");
+        question.setForeground(Color.BLACK);
         question.setFont(new Font("Serif", Font.PLAIN, 24));
         question.setBounds(150, 250, 700, 30);
         add(question);
 
         opt1 = new JRadioButton("");
+        opt1.setForeground(Color.BLACK);
         opt1.setBounds(170, 320, 700, 30);
         opt1.setFont(new Font("Serif", Font.PLAIN, 20));
-        opt1.setBackground(new Color(20, 160, 200));
+        opt1.setBackground(new Color(210, 210, 255));
         add(opt1);
         opt2 = new JRadioButton("");
+        opt2.setForeground(Color.BLACK);
         opt2.setBounds(170, 360, 700, 30);
         opt2.setFont(new Font("Serif", Font.PLAIN, 20));
-        opt2.setBackground(new Color(20, 160, 200));
+        opt2.setBackground(new Color(210, 210, 255));
         add(opt2);
         opt3 = new JRadioButton("");
+        opt3.setForeground(Color.BLACK);
         opt3.setBounds(170, 400, 700, 30);
         opt3.setFont(new Font("Serif", Font.PLAIN, 20));
-        opt3.setBackground(new Color(20, 160, 200));
+        opt3.setBackground(new Color(210, 210, 255));
         add(opt3);
         opt4 = new JRadioButton("");
+        opt4.setForeground(Color.BLACK);
         opt4.setBounds(170, 440, 700, 30);
         opt4.setFont(new Font("Serif", Font.PLAIN, 20));
-        opt4.setBackground(new Color(20, 160, 200));
+        opt4.setBackground(new Color(210, 210, 255));
         add(opt4);
 
         options = new ButtonGroup();
@@ -107,7 +113,8 @@ public class Quiz extends JFrame implements ActionListener {
 
         next = new JButton("Next");
         next.setFont(new Font("Century Gothic", Font.PLAIN, 22));
-        next.setBackground(new Color(200, 200, 200));
+        next.setBackground(new Color(254, 205, 0));
+        next.setForeground(Color.BLACK);
         next.addActionListener(this);
         next.setBounds(550, 650, 200, 40);
         add(next);
@@ -115,7 +122,8 @@ public class Quiz extends JFrame implements ActionListener {
         submit = new JButton("Submit");
         submit.setFont(new Font("Century Gothic", Font.PLAIN, 22));
         submit.setEnabled(false);
-        submit.setBackground(new Color(200, 200, 200));
+        submit.setBackground(new Color(254, 205, 0));
+        submit.setForeground(Color.BLACK);
         submit.addActionListener(this);
         submit.setBounds(1000, 650, 200, 40);
         add(submit);
@@ -163,7 +171,7 @@ public class Quiz extends JFrame implements ActionListener {
     public void paint(Graphics g) {
         super.paint(g);
         String time = "Time left : " + timer + " seconds...";
-        g.setColor(new Color(0, 100, 100));
+        g.setColor(new Color(210, 210, 255));
         g.setFont(new Font("Century Gothic", Font.BOLD, 25));
 
         if (timer > 0) {

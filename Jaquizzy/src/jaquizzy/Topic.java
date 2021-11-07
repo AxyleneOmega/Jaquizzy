@@ -16,7 +16,7 @@ public class Topic extends JFrame implements ActionListener {
         this.type = type;
         this.username = username;
         setBounds(100, 50, 1280, 750);
-        getContentPane().setBackground(Color.BLACK);
+        getContentPane().setBackground(new Color(79, 119, 255));
         setLayout(null);
         JLabel l0 = new JLabel("Welcome " + username + "!");
         l0.setBounds(250, 20, 700, 30);
