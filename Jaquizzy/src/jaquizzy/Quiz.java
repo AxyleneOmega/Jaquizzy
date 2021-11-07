@@ -61,7 +61,7 @@ public class Quiz extends JFrame implements ActionListener {
         ImageIcon icon = new ImageIcon(iconURL);
         this.setIconImage(icon.getImage());
         this.username = username;
-        this.setTitle("Jaquizzy! Quiztime");
+        this.setTitle("Jaquizzy! Quiz is on...");
         this.setList(qtopic);
         setBounds(100, 50, 1280, 750);
         getContentPane().setBackground(new Color(82, 113, 255));

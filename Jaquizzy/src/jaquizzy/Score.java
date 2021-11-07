@@ -10,14 +10,14 @@ public class Score extends JFrame implements ActionListener {
         URL iconURL = getClass().getClassLoader().getResource("jaquizzy/Assets/JLogo.png");
         ImageIcon icon = new ImageIcon(iconURL);
         this.setIconImage(icon.getImage());
-        this.setTitle("Jaquizzy! Scores");
+        this.setTitle("Jaquizzy! Score");
         setBounds(100, 50, 1280, 750);
         getContentPane().setBackground(new Color(82, 113, 255));
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/JaquizzyLogo.jpg"));
         JLabel l1 = new JLabel(i1);
-        l1.setBounds(0, 0, 400, 300);
+        l1.setBounds(50, 10, 400, 300);
         add(l1);
 
         JLabel l2 = new JLabel("Jaquizzy!");

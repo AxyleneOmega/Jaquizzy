@@ -17,9 +17,16 @@ public class Rules extends JFrame implements ActionListener {
         ImageIcon icon = new ImageIcon(iconURL);
         this.setIconImage(icon.getImage());
         this.username = username;
+        this.setTitle("Jaquizzy! Rules");
         setBounds(100, 50, 1280, 750);
         getContentPane().setBackground(new Color(82, 113, 255));
         setLayout(null);
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/JLogo.png"));
+        Image i = i1.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT);
+        i1.setImage(i);
+        JLabel lx = new JLabel(i1);
+        lx.setBounds(50, 50, 200, 200);
+        add(lx);
         JLabel l0 = new JLabel("Welcome " + username + "!");
         l0.setBounds(300, 50, 700, 30);
         l0.setForeground(Color.BLACK);
