@@ -1,0 +1,81 @@
+The Symbol given below is the logo of which car brand?
+-
+0
+Mercedes
+Jaguar
+BMW
+Audi
+3
+.
+I am a very popular Pizza chain in India and abroad. Guess?
+-
+0
+Pizza Hut
+La Pinoz Pizza
+Dominos
+Neapolitan Pizza
+2
+.
+Identify the logo and name the bank:
+-
+0
+Axis Bank
+Bank of Baroda
+State Bank of India
+HDFC Bank
+2
+.
+This Logo belongs to? 
+-
+1
+Hershey
+Nutella
+Natural Choco
+Ferrero Rocher
+1
+.
+What does this company deal with?
+-
+1
+Sportswear
+Furniture
+Electronics
+Cars
+0
+.
+Choose appropriate colour for the Logo:
+-
+1
+Red
+Green
+Yellow
+Pink
+3
+.
+Identify the logo and select the colour combo used in it's original: 
+-
+2
+White, Orange, Green
+Brown, White, Red
+Black, Blue, Red
+Brown, Red, yellow
+1
+.
+Identify the half logo and select the content that is shown by them.
+-
+2
+Wildlife
+Animated comedies
+Live Sports
+Movies
+0
+.
+Identify the incomplete logo:
+-
+2
+Tide
+Ariel
+Mr white
+Rin
+1
+.

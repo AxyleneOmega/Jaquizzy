@@ -2,19 +2,26 @@ package jaquizzy;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.awt.*;
 import java.util.*;
 import java.awt.event.*;
 
 class Questions {
     String question;
+    String resource;
+    int multiplier = 0;
     int index = 0;
     static int qno = 0;
     String options[] = new String[4];
     int correct = 0;
 
-    Questions(String question, String opt1, String opt2, String opt3, String opt4, int correct) {
+    Questions(String question, String resource, int m, String opt1, String opt2, String opt3, String opt4, int correct) {
         this.question = question;
+        this.resource = resource;
+        this.multiplier = m;
         this.options[0] = opt1;
         this.options[1] = opt2;
         this.options[2] = opt3;
@@ -33,7 +40,6 @@ public class Quiz extends JFrame implements ActionListener {
     LinkedList<Questions> quizQuestions = new LinkedList<Questions>();
     LinkedList<String> answers = new LinkedList<String>();
     String username;
-    File f;
     public static int count = 0;
     public static int timer = 30;
     public static int score = 0;
@@ -44,11 +50,10 @@ public class Quiz extends JFrame implements ActionListener {
     JRadioButton opt1, opt2, opt3, opt4;
     ButtonGroup options;
 
-    Quiz(String username, String qtopic, File f) {
-        this.f = f;
+    Quiz(String username, String qtopic) {
         this.username = username;
         this.setTitle("Jaquizzy! Quiztime");
-        this.setList(this.f);
+        this.setList(qtopic);
         setBounds(100, 50, 1280, 750);
         getContentPane().setBackground(new Color(20, 160, 200));
         setLayout(null);
@@ -140,9 +145,8 @@ public class Quiz extends JFrame implements ActionListener {
             ;
             for (int i = 0; i < answers.size(); i++) {
                 if (answers.get(i).equals(this.quizQuestions.get(i).options[this.quizQuestions.get(i).correct])) {
-                    score += 10;
+                    score += 10*(1+this.quizQuestions.get(i).multiplier);
                 }
-                ;
             }
             System.out.println(answers);
             this.setVisible(false);
@@ -214,13 +218,101 @@ public class Quiz extends JFrame implements ActionListener {
         }
     }
 
-    public int setList(File f) {
-        Scanner sc = new Scanner(System.in);
-        int line = 0;
-        //while(f.)
+    public int setList (String topic) {
+        String basePath = new File("").getAbsolutePath();
+        System.out.println(basePath);
 
+        String filePath = new File("Jaquizzy/src/jaquizzy/Files/"+topic+".txt").getAbsolutePath();
+        System.out.println(filePath);
+        File f = new File(filePath);
+        boolean fExists = true;
+        if(!f.exists()){
+            fExists = false;
+        }
+        System.out.println(fExists);
+        if(!f.canRead()){
+           f.setReadable(true);    
+        }
+        try{
+            Scanner sc = new Scanner(new BufferedReader(new FileReader(filePath)));
+            int line = 0;
+            String q = "";
+            String r = "";
+            int d = 0;
+            String o1 = "";
+            String o2 = "";
+            String o3 = "";
+            String o4 = "";
+            int cI = 0;
+            String dot = "";
+
+            while(sc.hasNextLine()){
+                line %= 9;
+                switch(line){
+                    case 0:{
+                        //Question
+                        try{
+                        q=sc.nextLine().toString();
+                        }
+                        catch(Exception e){
+                            e.printStackTrace();
+                            return -1;
+                        }
+                        break;
+                    }
+                    case 1:{
+                        //Image
+                        r = sc.nextLine().toString();
+                        break;
+                    }
+                    case 2:{
+                        //Difficulty
+                        d = Integer.parseInt(sc.nextLine().toString());
+                        break;
+                    }
+                    case 3:{
+                        //Option1
+                        o1 = sc.nextLine().toString();
+                        break;
+                    }
+                    case 4:{
+                        //Option2
+                        o2 = sc.nextLine().toString();
+                        break;
+                    }
+                    case 5:{
+                        //Option3
+                        o3 = sc.nextLine().toString();
+                        break;
+                    }
+                    case 6:{
+                        //Option4
+                        o4 = sc.nextLine().toString();
+                        break;
+                    }
+                    case 7:{
+                        //Correct Option Index
+                        cI = Integer.parseInt(sc.nextLine().toString());
+                        break;
+                    }
+                    case 8:{
+                        dot = sc.nextLine().toString();
+                        if(dot == "."){
+                            System.out.println(". found.");
+                        }
+                        this.quizQuestions.add(new Questions(q, r, d, o1, o2, o3, o4, cI));
+                        break;
+                    }
+                }
+                line ++;
+            }
+            sc.close();
+        }
+        catch(IOException ei){
+            ei.printStackTrace();
+            return -1;
+        }
         return this.quizQuestions.size();
-
     }
 
     public void start(int count) {
@@ -238,6 +330,6 @@ public class Quiz extends JFrame implements ActionListener {
     }
 
     public static void main(String args[]) {
-        new Quiz("", "", new File("")).setVisible(true);
+        new Quiz("", "").setVisible(true);
     }
 }

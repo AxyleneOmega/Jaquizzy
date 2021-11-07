@@ -1,6 +1,90 @@
 Which is the biggest planet in our solar system?
+-
+0
 Jupiter
 Saturn
 Venus
 Neptune
 0
+.
+What is the chemical symbol for the element mercury?
+-
+0
+Cl
+Mr
+Hg
+Mg
+2
+.
+How many bones does an adult human have?
+-
+0
+205
+206
+208
+207
+1
+.
+Gravity was discovered by?
+-
+0
+Issac Newton
+Albert Einstein
+Blaise Pascal
+Thomas Edison
+0
+.
+What is the SI unit of electric current?
+-
+1
+Volt
+Watt
+Ampere
+Electrons
+2
+.
+Bronze is an alloy of what?
+-
+1
+Iron and aluminium
+Tin and copper
+Iron and Tin
+Aluminium and copper
+1
+.
+What is the rarest blood group?
+-
+1
+AB+
+AB-
+O-
+A+
+1
+.
+The dimensions of Planck’s constant are same as?
+-
+2
+Energy
+Force
+Angular momentum
+Impulse
+2
+.
+Which catalyst is used in the manufacture of Sulfuric acid?
+-
+2
+Ziegler-Natta
+Vanadium pentoxide
+Sulphuric Oxide
+Aluminosilicates
+1
+.
+In which plants the annuals are absent?
+-
+0
+Peas
+Zinnia
+Gymnosperm
+Marigold
+2
+.

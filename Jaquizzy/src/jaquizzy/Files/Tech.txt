@@ -1,0 +1,81 @@
+Firewall in computer is used for?
+-
+0
+Security
+Data Transmission
+Authentication
+Monitoring
+0
+.
+What is the full form of URL?
+-
+0
+Uniform Resource Locater
+Unified Resource Locater
+Unified Resource Link
+Uniform Resource Link
+0
+.
+Mac operating system is developed by which company?
+-
+0
+IBM
+Microsoft
+Apple
+Samsung
+2
+.
+Which of the following isn't a programming language?
+-
+1
+Pascal
+HTML
+JAVA
+C++
+1
+.
+Which of the following is not a database management software?
+-
+1
+MYSQL
+Oracle
+Sybas
+COBOL
+3
+.
+First computer virus is known as?
+-
+1
+Rabbit
+Creeper Virus
+Elk Coner
+SCA Virus
+1
+.
+Computer Hard Disk was first introduced in 1956 by?
+-
+2
+Microsoft
+Dell
+Apple
+IBM
+3
+.
+Which computer program converts assembly language to machine language?
+-
+2
+Assembler
+Interpreter
+Compiler
+Comparator
+0
+.
+Which one is the latest one from PARAM SuperSries computers?
+-
+2
+PARAM Yuva II
+PARAM 10000
+PARAM Padma
+PARAMnet
+0
+.

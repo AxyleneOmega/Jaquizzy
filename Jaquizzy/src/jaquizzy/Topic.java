@@ -1,6 +1,5 @@
 package jaquizzy;
 
-import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -147,7 +146,7 @@ public class Topic extends JFrame implements ActionListener {
             repaint();
             this.setVisible(false);
             System.out.println(qtopic);
-            new Quiz(username,qtopic, new File(qtopic+".txt")).setVisible(true);
+            new Quiz(username, qtopic).setVisible(true);
         }
 
     }

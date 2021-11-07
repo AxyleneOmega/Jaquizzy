@@ -1,0 +1,63 @@
+Find the number of squares in the image: 
+-
+0
+9
+8
+6
+11
+1
+.
+No matter how little or how much you use me, you change me every month. 
+-
+0
+Soap
+Notebook
+Calender
+Bottle
+2
+.
+H is the daughter of J. T is the wife of J. Who is T of J?
+-
+0
+Wife
+Daughter
+Husband
+Aunt
+0
+.
+Today is Monday, After 61 days it'll be?
+-
+1
+Wednesday
+Friday
+Saturday
+Thursday
+2
+.
+How many holes does this shirt have? 
+-
+1
+2
+4
+7
+8
+3
+.
+When the given figure is folded to form a cube, which face is opposite to the face of 2? 
+-
+2
+2
+4
+1
+6
+2
+.
+You throw away the outside, eat the inside, and throw away the inside. What is it?
+-
+2
+Banana
+Pizza
+Chips
+Corn
+3
+.
