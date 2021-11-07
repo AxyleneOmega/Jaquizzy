@@ -1,0 +1,80 @@
+Which of these keywords is used to define interfaces in java?
+-
+0
+interface
+Interface
+Intf
+intf
+1
+.
+What is the syntax of abstract class in java?
+-
+0
+abstract A{}
+abstract class A
+abstract class A{}
+.abstract class A[]
+3
+.
+What is subclass in java?
+-
+A subclass is a class that extends another class
+A subclass in a class declared outside the class
+Both above
+None of the above
+1
+.
+What is collection in java?
+-
+0
+A group of objects
+A group of classes
+A group of interfaces
+None
+1
+.
+How to access static nested class?
+-
+1
+OuterClass.StaticNestedClass
+OuterClass->StaticNestedClass
+OuterClass(StaticNestedClass)
+OuterClass[StaticNestedClass]
+1
+.
+What is wrong with the following program?
+J1
+1
+Inner should extend Outer.
+Inner should be declared before main().
+No enclosing instance of Outer is created before Inner's constructor is invoked.
+Outer should be declared public.
+2
+.
+How can we write parameter less lambda expression?
+-
+1
+Pass an empty set of parentheses on the left side of the arrow
+No need to pass anything on the left side of the arrow
+In this case, arrow is not required
+None
+1
+.
+What happens when you try to compile and run the following program?
+J2
+2
+Illegal at compile time.
+This program writes “x4” to the standard output.
+This program writes “x7” to the standard output.
+This program writes “x14” to the standard output.
+3
+.
+What happens when the following is compiled and run?
+J3
+2
+This code writes “Britney-33” to the standard output.
+This code writes “Bob-33” to the standard output.
+This code writes “Britney-42 to the standard output.
+This code does not execute, because Subscriber doesn’t have a non-argument constructor.
+3
+.
