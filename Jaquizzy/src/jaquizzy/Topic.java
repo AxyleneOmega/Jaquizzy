@@ -3,6 +3,7 @@ package jaquizzy;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.net.URL;
 
 public class Topic extends JFrame implements ActionListener {
     public String type;
@@ -13,6 +14,9 @@ public class Topic extends JFrame implements ActionListener {
     String username;
 
     Topic(String username, String type) {
+        URL iconURL = getClass().getClassLoader().getResource("jaquizzy/Assets/JLogo.png");
+        ImageIcon icon = new ImageIcon(iconURL);
+        this.setIconImage(icon.getImage());
         this.type = type;
         this.username = username;
         setBounds(100, 50, 1280, 750);

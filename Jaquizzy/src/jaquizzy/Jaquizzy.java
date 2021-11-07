@@ -1,7 +1,7 @@
 package jaquizzy;
 
 import java.awt.Color;
-
+import java.net.URL;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -17,11 +17,14 @@ public class Jaquizzy extends JFrame implements ActionListener {
     JTextField t1;
 
     Jaquizzy() {
+        URL iconURL = getClass().getClassLoader().getResource("jaquizzy/Assets/JLogo.png");
+        ImageIcon icon = new ImageIcon(iconURL);
+        this.setIconImage(icon.getImage());
         this.setTitle("Jaquizzy!");
         setBounds(100, 50, 1280, 750);
         getContentPane().setBackground(new Color(82, 113, 255));
         setLayout(null);
-        
+
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/JaquizzyLogo.jpg"));
         JLabel l1 = new JLabel(i1);
         l1.setBounds(0, 0, 400, 300);
@@ -43,7 +46,7 @@ public class Jaquizzy extends JFrame implements ActionListener {
         t1.setFont(new Font("Serif", Font.PLAIN, 22));
         add(t1);
 
-        b1 = new JButton("Rules");
+        b1 = new JButton("Play!");
         b1.setFont(new Font("Century Gothic", Font.PLAIN, 22));
         b1.setBounds(630, 270, 120, 30);
         b1.setBackground(new Color(254, 205, 0));

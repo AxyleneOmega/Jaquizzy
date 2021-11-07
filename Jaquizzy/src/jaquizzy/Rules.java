@@ -1,10 +1,9 @@
 package jaquizzy;
 
-//import java.io.File;
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.*;
+import java.net.URL;
 
 public class Rules extends JFrame implements ActionListener {
     String username;
@@ -14,6 +13,9 @@ public class Rules extends JFrame implements ActionListener {
     public static String qType;
 
     Rules(String username) {
+        URL iconURL = getClass().getClassLoader().getResource("jaquizzy/Assets/JLogo.png");
+        ImageIcon icon = new ImageIcon(iconURL);
+        this.setIconImage(icon.getImage());
         this.username = username;
         setBounds(100, 50, 1280, 750);
         getContentPane().setBackground(new Color(82, 113, 255));
@@ -34,8 +36,7 @@ public class Rules extends JFrame implements ActionListener {
         l2.setBounds(300, 100, 800, 450);
         l2.setForeground(Color.BLACK);
         l2.setFont(new Font("Serif", Font.PLAIN, 20));
-        l2.setText("<html>" +
-                "1. Only one person can attempt the quiz at said time " + "<br>" +
+        l2.setText("<html>" + "1. Only one person can attempt the quiz at said time " + "<br>" +
 
                 "2. The levels of questions increases progressively for each topic, but the reward increases too!"
                 + "<br>" +
@@ -47,13 +48,12 @@ public class Rules extends JFrame implements ActionListener {
 
                 "5. You will have 30 Seconds to answer for each question." + "<br>" +
 
-                "6. One right answer will carry 10 marks and will be multiplied by the difficulty level to get your score" + "<br>" +
-
-                "7. The wrong answer will have 0 marks. There will be no negative marking. "
+                "6. One right answer will carry 10 marks and will be multiplied by the difficulty level to get your score"
                 + "<br>" +
 
-                "8. If the timer were to run out, the option selected last will be taken into account."
-                + "<br>" +
+                "7. The wrong answer will have 0 marks. There will be no negative marking. " + "<br>" +
+
+                "8. If the timer were to run out, the option selected last will be taken into account." + "<br>" +
 
                 "<html>");
         add(l2);
