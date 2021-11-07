@@ -56,12 +56,6 @@ public class Score extends JFrame implements ActionListener {
         new Jaquizzy().setVisible(true);
     }
 
-    static class MyWindowListener extends WindowAdapter {
-        public void windowClosing(WindowEvent e) {
-           System.exit(0);
-        }
-    }
-
     public static void main(String args[]) {
         new Score("", 0).setVisible(true);
     }
