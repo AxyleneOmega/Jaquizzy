@@ -1,5 +1,5 @@
 When BGMI was officially launched in India for Android devices?
--
+D11
 0
 2021
 2020
@@ -17,7 +17,7 @@ Xbox
 2
 .
 Mario originated as a character in which video game?
--
+D12
 0
 Donkey Kong
 Rainbow Road
@@ -26,7 +26,7 @@ Monkey Kong
 0
 .
 Which eSports team won the first-ever global valorant tournament?
--
+D21
 1
 Astralis
 Cloud9
@@ -35,7 +35,7 @@ Sentinals
 3
 .
 When was the first 'Call Of Duty' video game released? 
--
+D22
 1
 2003
 2001
@@ -53,7 +53,7 @@ Play Station 4
 0
 .
 Who is the developer of game "God Of War"?
--
+D29
 2
 Sony Entertainment
 Santa Monica Studio

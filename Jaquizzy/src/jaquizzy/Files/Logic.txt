@@ -1,5 +1,5 @@
 Find the number of squares in the image: 
--
+P3
 0
 9
 8
@@ -35,7 +35,7 @@ Thursday
 2
 .
 How many holes does this shirt have? 
--
+P6
 1
 2
 4

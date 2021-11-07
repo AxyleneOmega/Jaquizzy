@@ -8,7 +8,7 @@ Steam
 3
 .
 Shah rukh khan didn't act in which of the following movies? D3
--
+D3
 0
 Ae dil hai mushkil
 Dilwale
@@ -26,7 +26,7 @@ Hollywood
 2
 .
 The first "The Avengers" movie was released in year? D4
--
+D4
 0
 2009
 2012
@@ -80,7 +80,7 @@ Forrest Gump
 3
 .
 First Indian movie "Raja Harishchandra" was released in year? D25
--
+D25
 2
 1910
 1913

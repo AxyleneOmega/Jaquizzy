@@ -1,5 +1,5 @@
 Which is the biggest planet in our solar system?
--
+P1
 0
 Jupiter
 Saturn
@@ -8,7 +8,7 @@ Neptune
 0
 .
 What is the chemical symbol for the element mercury?
--
+P2
 0
 Cl
 Mr

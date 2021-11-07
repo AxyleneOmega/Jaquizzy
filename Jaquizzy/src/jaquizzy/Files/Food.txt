@@ -1,5 +1,5 @@
 Paneer is a type of what?
--
+D13
 0
 Meat
 Cheese
@@ -8,7 +8,7 @@ Pudding
 1
 .
 White, brown, red and sticky are all types of what?
--
+D14
 0
 Rice
 Curry
@@ -26,7 +26,7 @@ A big bowl
 1
 .
 In Gujarat, which of the following combination is eaten largely during the festival of Dusshera?
--
+D23
 1
 Fafda-Jalebi
 Rabdi-Jalebi
@@ -35,7 +35,7 @@ Khichdi-Khadi
 0
 .
 Which of the following is not a Bengali Dish? 
--
+D24
 1
 Samosa
 Misti doi
@@ -53,7 +53,7 @@ Jalfrezi,  Vindaloo, Tikka Masala, Korma
 0
 .
 Kerala is known as "The Land of Spices" with one particular spice - dubbed 'black gold' - the most celebrated of all. What is it?
--
+D30
 2
 Black Pepper
 Nigella Seed

@@ -1,5 +1,5 @@
 Who is the current chairman of BCCI? 
--
+D1
 0
 Saurav Ganguly
 Anurag Thakur
@@ -25,8 +25,8 @@ Portugal
 Argentina
 0
 .
-Who won gold medal for India in Olympics 2021? D2
--
+Who won gold medal for India in Olympics 2021?
+D2
 0
 Neeraj Chopra
 Ravi Kumar Dahiya
@@ -34,8 +34,8 @@ PV Sindhu
 Mirabai Chanu
 0
 .
-How many gold medals has Usain Bolt won? D15
--
+How many gold medals has Usain Bolt won? 
+D15
 1
 10
 12

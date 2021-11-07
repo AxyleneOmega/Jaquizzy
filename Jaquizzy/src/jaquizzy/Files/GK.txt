@@ -44,7 +44,7 @@ National Development Council
 0
 .
 When ‘World War I’ was ended? 
--
+P4
 1
 1918
 1917
@@ -53,7 +53,7 @@ When ‘World War I’ was ended?
 0
 .
 Which of the following terms singnify the Nilgiri Hills? 
--
+P5
 1
 Blue mountains
 South Indian range
