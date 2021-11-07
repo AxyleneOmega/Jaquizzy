@@ -22,6 +22,12 @@ public class Topic extends JFrame implements ActionListener {
         setBounds(100, 50, 1280, 750);
         getContentPane().setBackground(new Color(82, 113, 255));
         setLayout(null);
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/JLogo.png"));
+        Image i = i1.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT);
+        i1.setImage(i);
+        JLabel lx = new JLabel(i1);
+        lx.setBounds(50, 50, 200, 200);
+        add(lx);
         JLabel l0 = new JLabel("Welcome " + username + "!");
         l0.setBounds(300, 100, 700, 30);
         l0.setForeground(Color.BLACK);
@@ -144,13 +150,14 @@ public class Topic extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == back) {
+            repaint();
             this.setVisible(false);
             new Rules(username).setVisible(true);
         } else if (ae.getSource() == start) {
             repaint();
             this.setVisible(false);
             System.out.println(qtopic);
-            new Quiz(username, qtopic).setVisible(true);
+            new Quiz(username, topic.getSelection().getActionCommand()).setVisible(true);
         }
 
     }

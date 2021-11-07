@@ -17,7 +17,7 @@ public class Score extends JFrame implements ActionListener {
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/JaquizzyLogo.jpg"));
         JLabel l1 = new JLabel(i1);
-        l1.setBounds(0, 0, 400, 300);
+        l1.setBounds(50, 10, 400, 300);
         add(l1);
 
         JLabel l2 = new JLabel("Jaquizzy!");
