@@ -19,22 +19,22 @@ public class Rules extends JFrame implements ActionListener {
         getContentPane().setBackground(new Color(79, 119, 255));
         setLayout(null);
         JLabel l0 = new JLabel("Welcome " + username + "!");
-        l0.setBounds(250, 20, 700, 30);
+        l0.setBounds(300, 50, 700, 30);
         l0.setForeground(Color.BLACK);
         l0.setFont(new Font("Century Gothic", Font.BOLD, 28));
         add(l0);
         JLabel l1 = new JLabel("Rules of Jaquizzy!");
-        l1.setBounds(250, 60, 700, 30);
+        l1.setBounds(300, 100, 700, 30);
         l1.setForeground(Color.BLACK);
         l1.setFont(new Font("Century Gothic", Font.BOLD, 28));
         add(l1);
 
         JLabel l2 = new JLabel("");
-        l2.setBounds(250, 80, 800, 450);
+        l2.setForeground(Color.BLACK);
+        l2.setBounds(300, 100, 800, 450);
         l2.setForeground(Color.BLACK);
         l2.setFont(new Font("Serif", Font.PLAIN, 20));
         l2.setText("<html>" +
-
                 "1. Only one person can attempt the quiz at said time " + "<br>" +
 
                 "2. The levels of questions increases progressively for each topic, but the reward increases too!"
@@ -59,13 +59,15 @@ public class Rules extends JFrame implements ActionListener {
         add(l2);
 
         edu = new JRadioButton("Education Quiz");
-        edu.setBounds(250, 520, 300, 30);
+        edu.setBounds(300, 520, 300, 30);
+        edu.setForeground(Color.BLACK);
         edu.setFont(new Font("Century Gothic", Font.PLAIN, 22));
         edu.setBackground(new Color(100, 200, 50));
         edu.setActionCommand("Education Quiz");
         add(edu);
         ent = new JRadioButton("Entertainment Quiz");
-        ent.setBounds(600, 520, 300, 30);
+        ent.setForeground(Color.BLACK);
+        ent.setBounds(650, 520, 300, 30);
         ent.setFont(new Font("Century Gothic", Font.PLAIN, 22));
         ent.setBackground(new Color(220, 70, 200));
         ent.setActionCommand("Entertainment Quiz");
@@ -76,7 +78,7 @@ public class Rules extends JFrame implements ActionListener {
 
         b1 = new JButton("Back");
         b1.setFont(new Font("Century Gothic", Font.PLAIN, 22));
-        b1.setBounds(425, 600, 120, 25);
+        b1.setBounds(300, 600, 120, 25);
         b1.setBackground(new Color(254, 100, 100));
         b1.setForeground(Color.BLACK);
         b1.addActionListener(this);
@@ -84,7 +86,7 @@ public class Rules extends JFrame implements ActionListener {
 
         b2 = new JButton("Next");
         b2.setFont(new Font("Century Gothic", Font.PLAIN, 22));
-        b2.setBounds(250, 600, 120, 25);
+        b2.setBounds(500, 600, 120, 25);
         b2.setBackground(new Color(254, 205, 0));
         b2.setForeground(Color.BLACK);
         b2.addActionListener(this);

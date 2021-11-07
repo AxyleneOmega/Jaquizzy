@@ -337,21 +337,31 @@ public class Quiz extends JFrame implements ActionListener {
         opt4.setText(this.quizQuestions.get(count).options[3]);
         opt4.setActionCommand(this.quizQuestions.get(count).options[3]);
         options.clearSelection();
-        
-        String imgPath = new File("Jaquizzy/src/jaquizzy/Images/"+this.quizQuestions.get(count).resource+".jpg").getAbsolutePath();
-        System.out.println(imgPath);
+        System.out.println(">>"+this.quizQuestions.get(count).resource+"<<");
         try{
+            if(this.quizQuestions.get(count).resource == "-"){
+                String imgPath = new File("Jaquizzy/src/jaquizzy/Assets/Placeholder.png").getAbsolutePath();
+                System.out.println(imgPath);
+                img = ImageIO.read(new File(imgPath));
+                qIm = new JLabel();
+                qIm.setBounds(900, 320, 300, 300);
+                add(qIm);
+            }
             if(this.quizQuestions.get(count).resource != "-"){
+                String imgPath = new File("Jaquizzy/src/jaquizzy/Images/"+this.quizQuestions.get(count).resource+".jpg").getAbsolutePath();
+                System.out.println(imgPath);
                 img = ImageIO.read(new File(imgPath));
                 qIm = new JLabel(new ImageIcon(img));
                 qIm.setBounds(900, 320, 300, 300);
                 add(qIm);
             }
+            
+            repaint();
         }
         catch(IOException e){
             e.printStackTrace();
         }
-            
+        
     }
 
     public static void main(String args[]) {

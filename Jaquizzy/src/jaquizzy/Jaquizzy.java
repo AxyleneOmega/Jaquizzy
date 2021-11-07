@@ -21,7 +21,7 @@ public class Jaquizzy extends JFrame implements ActionListener {
         setBounds(100, 50, 1280, 750);
         getContentPane().setBackground(new Color(79, 119, 255));
         setLayout(null);
-
+        
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("jaquizzy/Assets/Placeholder.png"));
         Image i2 = i1.getImage().getScaledInstance(400, 300, Image.SCALE_DEFAULT);
         i1 = new ImageIcon(i2);
