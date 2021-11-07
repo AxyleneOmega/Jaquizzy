@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.net.URL;
 
+
 public class Rules extends JFrame implements ActionListener {
     String username;
     JButton b1, b2;
