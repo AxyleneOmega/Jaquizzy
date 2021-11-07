@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.awt.*;
 import java.util.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
 
 class Questions {
     String question;
@@ -49,6 +51,8 @@ public class Quiz extends JFrame implements ActionListener {
     JLabel qno, question;
     JRadioButton opt1, opt2, opt3, opt4;
     ButtonGroup options;
+    JLabel qIm;
+    BufferedImage img = null;
 
     Quiz(String username, String qtopic) {
         this.username = username;
@@ -207,7 +211,6 @@ public class Quiz extends JFrame implements ActionListener {
                 this.setVisible(false);
                 quizOn = false;
                 count = 0;
-                // new Score(username).setVisible(true);
             } else {
                 count++;
                 if (count < this.quizQuestions.size()) {
@@ -221,7 +224,6 @@ public class Quiz extends JFrame implements ActionListener {
     public int setList (String topic) {
         String basePath = new File("").getAbsolutePath();
         System.out.println(basePath);
-
         String filePath = new File("Jaquizzy/src/jaquizzy/Files/"+topic+".txt").getAbsolutePath();
         System.out.println(filePath);
         File f = new File(filePath);
@@ -327,6 +329,21 @@ public class Quiz extends JFrame implements ActionListener {
         opt4.setText(this.quizQuestions.get(count).options[3]);
         opt4.setActionCommand(this.quizQuestions.get(count).options[3]);
         options.clearSelection();
+        
+        String imgPath = new File("Jaquizzy/src/jaquizzy/Images/"+this.quizQuestions.get(count).resource+".jpg").getAbsolutePath();
+        System.out.println(imgPath);
+        try{
+            if(this.quizQuestions.get(count).resource != "-"){
+                img = ImageIO.read(new File(imgPath));
+                qIm = new JLabel(new ImageIcon(img));
+                qIm.setBounds(900, 320, 300, 300);
+                add(qIm);
+            }
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+            
     }
 
     public static void main(String args[]) {
