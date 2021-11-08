@@ -76,6 +76,6 @@ J3
 This code writes 'Britney-33' to the standard output.
 This code writes 'Bob-33' to the standard output.
 This code writes 'Britney-42' to the standard output.
-This code does not execute, because Subscriber does not have a non-argument constructor.
+Does not execute, as Subscriber does not have a non-argument constructor.
 2
 .
