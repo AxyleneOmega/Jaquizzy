@@ -70,6 +70,8 @@ public class Topic extends JFrame implements ActionListener {
             b6.setText("English");
             b6.setActionCommand("English");
         } else if (type.equals("Entertainment Quiz")) {
+            b0.setText("GK");
+            b0.setActionCommand("GK");
             b1.setText("Sports");
             b1.setActionCommand("Sports");
             b2.setText("Movies");

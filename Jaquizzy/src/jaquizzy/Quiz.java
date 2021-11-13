@@ -207,15 +207,13 @@ public class Quiz extends JFrame implements ActionListener {
             submit.setEnabled(true);
         }
         if (timer < 0) {
-            timer = 30;
             if (options.getSelection() == null) {
                 answers.add("");
             } else {
                 answers.add(options.getSelection().getActionCommand());
             }
-            ;
             quizOn = true;
-            if (count == this.quizQuestions.size()) {
+            if (count == this.quizQuestions.size()-1) {
                 for (int i = 0; i < answers.size(); i++) {
                     if (answers.get(i).equals(this.quizQuestions.get(i).options[this.quizQuestions.get(i).correct])) {
                         score += 10;
@@ -226,6 +224,7 @@ public class Quiz extends JFrame implements ActionListener {
                 this.setVisible(false);
                 quizOn = false;
                 count = 0;
+                new Score(username, score).setVisible(true);    
             } else {
                 count++;
                 if (count < this.quizQuestions.size()) {
@@ -233,6 +232,7 @@ public class Quiz extends JFrame implements ActionListener {
                 }
                 System.out.println(answers);
             }
+            timer = 30;
         }
     }
 
